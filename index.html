@@ -4,9 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alkemist — UX/UI Design Portfolio</title>
+  <title>Alkemist — UX/UI Design Portfolio 2026</title>
   <meta name="description"
     content="Portfolio de diseño UX/UI de Alkemist. Creando productos digitales funcionales, sistemas de diseño escalables y experiencias memorables.">
+
+  <!-- Google Fonts: Fraunces (wonky whimsical display serif) & Plus Jakarta Sans (friendly modern sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,58 +24,89 @@
           colors: {
             palette: {
               sky: '#BFDFFF',
+              skyDeep: '#80B8F0',
               cream: '#FFF2A9',
+              creamLight: '#FFFCEB',
+              creamBorder: '#EFE2BA',
               amber: '#FFA700',
+              amberHover: '#E69600',
               burgundy: '#94002D',
               burgundyHover: '#7B0024',
               burgundyDark: '#5C001C',
-              amberHover: '#E69600',
               bgWarm: '#FAF8F2',
-              cardLight: '#FFFCEB',
-              cardBorder: '#EFE2BA',
             }
           },
           fontFamily: {
-            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['"Fraunces"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
           }
         }
       }
     }
   </script>
 
-  <!-- Google Fonts: Instrument Serif & Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-
   <style>
     body {
       background-color: #FAF8F2;
       background-image:
-        radial-gradient(circle at 50% -60px, rgba(191, 223, 255, 0.45) 0%, rgba(255, 242, 169, 0.25) 35%, rgba(250, 248, 242, 0) 70%);
+        radial-gradient(circle at 50% -40px, rgba(191, 223, 255, 0.5) 0%, rgba(255, 242, 169, 0.3) 30%, rgba(250, 248, 242, 0) 65%);
       background-repeat: no-repeat;
       color: #18181B;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
-    .font-serif-title {
-      font-family: 'Instrument Serif', Georgia, serif;
+    .font-display {
+      font-family: 'Fraunces', Georgia, serif;
+      font-variation-settings: 'WONK' 1, 'opsz' 144;
     }
 
-    /* Subtle perspective grid for dark card with amber lines */
-    .perspective-grid {
-      background-image:
-        linear-gradient(to right, rgba(255, 167, 0, 0.16) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 167, 0, 0.16) 1px, transparent 1px);
-      background-size: 32px 32px;
-      transform: perspective(600px) rotateX(45deg);
-      transform-origin: bottom center;
+    /* Chunky 3D tactile buttons */
+    .btn-chunky-burgundy {
+      background-color: #94002D;
+      color: #FFF2A9;
+      box-shadow: 0 5px 0 #5C001C;
+      transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .btn-chunky-burgundy:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 0 #5C001C;
+      background-color: #800026;
+    }
+    .btn-chunky-burgundy:active {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 #5C001C;
     }
 
-    /* Tactile Paper Texture for the First Banner */
+    .btn-chunky-amber {
+      background-color: #FFA700;
+      color: #1C0B12;
+      box-shadow: 0 5px 0 #B87400;
+      transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .btn-chunky-amber:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 0 #B87400;
+      background-color: #FFB31A;
+    }
+    .btn-chunky-amber:active {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 #B87400;
+    }
+
+    /* Tactile Retro Card Styling */
+    .card-retro {
+      background-color: #FFFCEB;
+      border: 2.5px solid #EFE2BA;
+      box-shadow: 5px 5px 0px rgba(148, 0, 45, 0.12);
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .card-retro:hover {
+      transform: translateY(-5px);
+      box-shadow: 8px 8px 0px #FFA700;
+      border-color: #FFA700;
+    }
+
+    /* Tactile Paper Texture for Banner */
     .paper-canvas {
       background-color: #92C6F7;
       background-image: 
@@ -77,7 +115,7 @@
         repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0, 0, 0, 0.02) 3px, rgba(0, 0, 0, 0.02) 6px);
     }
 
-    /* Floating Animations for the Pegasus Figurines */
+    /* Floating Animations for Pegasus Figurines */
     @keyframes floatLeft {
       0%, 100% { transform: translateY(0px) rotate(-1deg); }
       50% { transform: translateY(-10px) rotate(1.5deg); }
@@ -90,43 +128,74 @@
       0%, 100% { transform: scale(1); opacity: 0.28; }
       50% { transform: scale(0.85); opacity: 0.16; }
     }
+    @keyframes starTwinkle {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.85; }
+      50% { transform: scale(1.25) rotate(45deg); opacity: 1; }
+    }
+    @keyframes gentleWobble {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-2deg); }
+      75% { transform: rotate(2deg); }
+    }
 
-    .anim-float-left {
-      animation: floatLeft 4s ease-in-out infinite;
+    .anim-float-left { animation: floatLeft 4s ease-in-out infinite; }
+    .anim-float-right { animation: floatRight 4.5s ease-in-out infinite; }
+    .anim-shadow-left { animation: shadowPulse 4s ease-in-out infinite; }
+    .anim-shadow-right { animation: shadowPulse 4.5s ease-in-out infinite; }
+    .anim-twinkle { animation: starTwinkle 3.5s ease-in-out infinite; }
+    .anim-wobble { animation: gentleWobble 6s ease-in-out infinite; }
+
+    /* Interactive Sticker Wobble */
+    .sticker-wobble {
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
-    .anim-float-right {
-      animation: floatRight 4.5s ease-in-out infinite;
+    .sticker-wobble:hover {
+      transform: scale(1.1) rotate(-3deg);
     }
-    .anim-shadow-left {
-      animation: shadowPulse 4s ease-in-out infinite;
-    }
-    .anim-shadow-right {
-      animation: shadowPulse 4.5s ease-in-out infinite;
+
+    /* Subtle perspective grid for dark card with amber lines */
+    .perspective-grid {
+      background-image:
+        linear-gradient(to right, rgba(255, 167, 0, 0.18) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 167, 0, 0.18) 1px, transparent 1px);
+      background-size: 32px 32px;
+      transform: perspective(600px) rotateX(45deg);
+      transform-origin: bottom center;
     }
   </style>
 </head>
 
 <body class="bg-[#FAF8F2] text-zinc-900 antialiased selection:bg-[#FFA700] selection:text-[#18080E]">
 
-  <!-- Header / Navigation -->
-  <header class="w-full max-w-6xl mx-auto px-6 py-6 sm:py-8 flex items-center justify-between text-sm font-medium">
-    <a href="#work" class="text-zinc-600 hover:text-[#94002D] transition-colors">Projects</a>
+  <!-- Header / Navigation (Whimsical Floating Pill) -->
+  <header class="w-full max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-4">
+    <nav class="w-full bg-[#FFFCEB]/90 backdrop-blur-md border-2 border-[#EFE2BA] shadow-[0_4px_12px_rgba(148,0,45,0.06)] rounded-full px-5 sm:px-8 py-3.5 flex items-center justify-between">
+      
+      <!-- Left Link -->
+      <a href="#work" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-zinc-700 hover:text-[#94002D] transition-colors group">
+        <span class="text-[#FFA700] group-hover:scale-125 transition-transform">✦</span>
+        Projects
+      </a>
 
-    <a href="#"
-      class="font-serif-title italic text-2xl text-[#94002D] font-normal tracking-tight hover:opacity-90 transition-opacity">
-      Alkemist's Portfolio
-    </a>
+      <!-- Center Logo with Whimsical Serif & Apple/Star touch -->
+      <a href="#" class="font-display italic text-xl sm:text-2xl text-[#94002D] font-bold tracking-tight hover:opacity-90 transition-opacity flex items-center gap-1.5">
+        <span>Alkemist's Portfolio</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-[#FFA700]"></span>
+      </a>
 
-    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-      class="text-zinc-600 hover:text-[#94002D] transition-colors">
-      LinkedIn
-    </a>
+      <!-- Right Link -->
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-zinc-700 hover:text-[#94002D] transition-colors group">
+        LinkedIn
+        <span class="text-[#FFA700] group-hover:scale-125 transition-transform">✦</span>
+      </a>
+    </nav>
   </header>
 
   <!-- ========================================================= -->
   <!-- FIRST BANNER OF THE WEB (Recreation of Reference in Palette) -->
   <!-- ========================================================= -->
-  <section class="w-full max-w-6xl mx-auto px-4 sm:px-6 pt-2 pb-10">
+  <section class="w-full max-w-6xl mx-auto px-4 sm:px-6 pt-2 pb-8">
     <div class="relative w-full aspect-[16/10] sm:aspect-[16/8.5] md:aspect-[16/7.5] rounded-3xl overflow-hidden shadow-2xl border-4 border-[#FFF2A9]/95 paper-canvas flex flex-col justify-between select-none group transition-shadow duration-300 hover:shadow-[#BFDFFF]/50">
       
       <!-- Top Decorative Ribbon Pattern -->
@@ -171,7 +240,7 @@
           <img 
             src="pegasus-left.png" 
             alt="Pegasus Figurine Left" 
-            class="w-18 sm:w-28 md:w-40 lg:w-48 h-auto object-contain anim-float-left group-hover/pegasus:-translate-y-2 transition-transform duration-300 drop-shadow-[0_12px_18px_rgba(0,0,0,0.18)]"
+            class="w-18 sm:w-28 md:w-40 lg:w-48 h-auto object-contain anim-float-left group-hover/pegasus:-translate-y-2.5 transition-transform duration-300 drop-shadow-[0_14px_18px_rgba(0,0,0,0.2)]"
           >
           <div class="w-14 sm:w-22 md:w-32 h-2 sm:h-3 bg-black/25 rounded-full blur-[3px] anim-shadow-left -mt-1 sm:-mt-2"></div>
         </div>
@@ -181,9 +250,9 @@
           <img 
             src="portfolio-hero-logo.png" 
             alt="Portfolio 2026" 
-            class="w-44 sm:w-64 md:w-80 lg:w-[380px] h-auto object-contain drop-shadow-[0_6px_12px_rgba(0,0,0,0.14)] hover:scale-[1.02] transition-transform duration-300 select-none"
+            class="w-44 sm:w-64 md:w-80 lg:w-[380px] h-auto object-contain drop-shadow-[0_6px_12px_rgba(0,0,0,0.14)] hover:scale-[1.03] transition-transform duration-300 select-none cursor-pointer"
           >
-          <div class="font-serif italic text-xs sm:text-sm md:text-base text-[#FFF2A9] tracking-[0.25em] uppercase font-medium mt-1 sm:mt-2.5 drop-shadow-sm flex items-center gap-1.5 sm:gap-2">
+          <div class="font-display italic text-xs sm:text-sm md:text-base text-[#FFF2A9] tracking-[0.25em] uppercase font-bold mt-1 sm:mt-2.5 drop-shadow-sm flex items-center gap-1.5 sm:gap-2">
             <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#94002D]"></span>
             DISEÑO GRÁFICO &bull; UX/UI ARCHITECT
             <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#94002D]"></span>
@@ -195,7 +264,7 @@
           <img 
             src="pegasus-right.png" 
             alt="Pegasus Figurine Right" 
-            class="w-18 sm:w-28 md:w-40 lg:w-48 h-auto object-contain anim-float-right group-hover/pegasus:-translate-y-2 transition-transform duration-300 drop-shadow-[0_12px_18px_rgba(0,0,0,0.18)]"
+            class="w-18 sm:w-28 md:w-40 lg:w-48 h-auto object-contain anim-float-right group-hover/pegasus:-translate-y-2.5 transition-transform duration-300 drop-shadow-[0_14px_18px_rgba(0,0,0,0.2)]"
           >
           <div class="w-14 sm:w-22 md:w-32 h-2 sm:h-3 bg-black/25 rounded-full blur-[3px] anim-shadow-right -mt-1 sm:-mt-2"></div>
         </div>
@@ -211,400 +280,420 @@
     </div>
   </section>
 
-  <!-- Hero Section -->
-  <section class="max-w-4xl mx-auto px-6 pt-4 pb-20 text-center">
-    <div
-      class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF2A9]/60 border border-[#FFA700]/30 text-xs font-medium text-zinc-800 mb-6 backdrop-blur-sm shadow-sm">
-      <span class="inline-block w-2 h-2 rounded-full bg-[#94002D]"></span>
-      Available for Q1/Q2 Design Projects
-    </div>
 
-    <h1
-      class="font-serif-title italic text-5xl sm:text-6xl md:text-7xl text-zinc-900 font-normal tracking-tight leading-[1.1] mb-5">
-      UX/UI Designer<br>&amp; Product Architect
-    </h1>
 
-    <p class="text-zinc-600 text-sm sm:text-base font-normal tracking-wide mb-8">
-      With 4 Years of Industrial Experience
-    </p>
-
-    <div>
-      <a href="#contact"
-        class="inline-flex items-center gap-1.5 bg-[#94002D] hover:bg-[#7B0024] text-white text-sm font-medium px-6 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md hover:shadow-[#94002D]/20">
-        View Resume
-        <svg class="w-3.5 h-3.5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
-        </svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- Sneak Peek Section -->
-  <section id="work" class="max-w-6xl mx-auto px-6 py-12">
-    <!-- Icon / Badge at top of section -->
+  <!-- ========================================================= -->
+  <!-- SNEAK PEEK SECTION (Playful Retro-Artisan Project Cards) -->
+  <!-- ========================================================= -->
+  <section id="work" class="max-w-6xl mx-auto px-6 py-14">
+    
+    <!-- Section Header with Circus/Fairytale Star Gyroscope -->
     <div class="flex flex-col items-center justify-center mb-14 text-center">
-      <div class="w-10 h-10 mb-3 flex items-center justify-center text-zinc-800">
-        <!-- Spiral / gyroscope wireframe icon with amber center dot -->
-        <svg class="w-8 h-8 text-zinc-700" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6">
-          <circle cx="20" cy="20" r="16" stroke-dasharray="3 3" />
+      <div class="w-12 h-12 mb-3 flex items-center justify-center relative">
+        <svg class="w-10 h-10 text-[#94002D] anim-wobble" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="20" cy="20" r="16" stroke-dasharray="3 3" stroke="#FFA700" />
           <ellipse cx="20" cy="20" rx="16" ry="7" />
           <ellipse cx="20" cy="20" rx="7" ry="16" />
-          <circle cx="20" cy="20" r="3" fill="#FFA700" />
+          <circle cx="20" cy="20" r="3.5" fill="#FFA700" />
         </svg>
       </div>
-      <h2 class="font-serif-title italic text-4xl sm:text-5xl text-zinc-900 font-normal">
+
+      <h2 class="font-display italic text-4xl sm:text-5xl text-[#94002D] font-extrabold tracking-tight">
         Sneak peek of my work
       </h2>
-      <p class="text-zinc-500 text-sm mt-2">
-        Crafting functional, stunning products.
+      <p class="text-zinc-600 text-sm font-medium mt-2 flex items-center gap-1.5">
+        <span class="text-[#FFA700]">✦</span>
+        Crafting functional, stunning products
+        <span class="text-[#FFA700]">✦</span>
       </p>
     </div>
 
-    <!-- 2-Column Work Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+    <!-- 2-Column Work Grid (Chunky Retro Cards) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
 
-      <!-- Project Card 1: AI hiring agent -->
-      <article class="flex flex-col">
-        <div
-          class="relative w-full aspect-[16/10] bg-[#1A1C20] rounded-2xl overflow-hidden border border-[#EFE2BA] shadow-sm group">
+      <!-- Project Card 1: AI hiring agent (Fintech • AI) -->
+      <article class="card-retro rounded-3xl p-4 sm:p-5 flex flex-col group relative overflow-hidden">
+        <!-- Top Image Container with Sticker Stamp -->
+        <div class="relative w-full aspect-[16/10] bg-[#1A1C20] rounded-2xl overflow-hidden border-2 border-[#EFE2BA] group-hover:border-[#FFA700] transition-colors">
           <img src="https://placehold.co/800x500/181a1f/ffffff?text=AI+Hiring+Agent+Preview"
             alt="AI hiring agent interface preview"
-            class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy">
-          <span
-            class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[11px] font-medium px-3 py-1 rounded-full border border-white/10">
-            Under NDA
+          
+          <!-- Tactile Stamp Badge -->
+          <span class="absolute top-3 right-3 bg-[#1C0B12]/85 backdrop-blur-md text-[#FFF2A9] text-[11px] font-bold px-3 py-1 rounded-full border border-[#FFA700]/50 shadow-md sticker-wobble flex items-center gap-1">
+            <span>🔒</span> Under NDA
           </span>
         </div>
-        <div class="mt-4">
-          <span class="text-[11px] uppercase tracking-wider text-[#94002D] font-semibold">Fintech &bull; AI</span>
-          <h3 class="text-lg font-semibold text-zinc-900 mt-0.5">AI hiring agent</h3>
-          <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed mt-1">
-            Streamlines hiring by analyzing resumes and candidate's input against JD with AI. It understands the
-            background instead of matching the keyword.
-          </p>
+
+        <!-- Card Content -->
+        <div class="pt-4 pb-2 px-1 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="bg-[#BFDFFF]/60 text-[#0f3c68] border border-[#BFDFFF] px-3 py-0.5 rounded-full text-[11px] font-bold tracking-wider uppercase inline-flex items-center gap-1">
+                <span class="text-[#FFA700]">✦</span> Fintech &bull; AI
+              </span>
+            </div>
+            <h3 class="font-display italic text-2xl font-bold text-[#94002D] mt-2 group-hover:text-[#7B0024] transition-colors">
+              AI hiring agent
+            </h3>
+            <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed mt-1.5 font-medium">
+              Streamlines hiring by analyzing resumes and candidate's input against JD with AI. It understands the background instead of matching the keyword.
+            </p>
+          </div>
         </div>
       </article>
 
-      <!-- Project Card 2: AI powered dashboard experience -->
-      <article class="flex flex-col">
-        <div
-          class="relative w-full aspect-[16/10] bg-[#1A1C20] rounded-2xl overflow-hidden border border-[#EFE2BA] shadow-sm group">
+      <!-- Project Card 2: AI powered dashboard experience (SaaS • UX) -->
+      <article class="card-retro rounded-3xl p-4 sm:p-5 flex flex-col group relative overflow-hidden">
+        <div class="relative w-full aspect-[16/10] bg-[#1A1C20] rounded-2xl overflow-hidden border-2 border-[#EFE2BA] group-hover:border-[#FFA700] transition-colors">
           <img src="https://placehold.co/800x500/1e232b/ffffff?text=AI+Dashboard+Experience"
             alt="AI powered dashboard experience preview"
-            class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy">
-          <span
-            class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[11px] font-medium px-3 py-1 rounded-full border border-white/10">
-            Under NDA
+          
+          <span class="absolute top-3 right-3 bg-[#1C0B12]/85 backdrop-blur-md text-[#FFF2A9] text-[11px] font-bold px-3 py-1 rounded-full border border-[#FFA700]/50 shadow-md sticker-wobble flex items-center gap-1">
+            <span>🔒</span> Under NDA
           </span>
         </div>
-        <div class="mt-4">
-          <span class="text-[11px] uppercase tracking-wider text-[#94002D] font-semibold">SaaS &bull; UX</span>
-          <h3 class="text-lg font-semibold text-zinc-900 mt-0.5">AI powered dashboard experience</h3>
-          <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed mt-1">
-            A personalised onboarding experience which uses AI to tailor the questions and modifies the dashboard as per
-            the user input.
-          </p>
+
+        <div class="pt-4 pb-2 px-1 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="bg-[#FFF2A9] text-[#704200] border border-[#FFE277] px-3 py-0.5 rounded-full text-[11px] font-bold tracking-wider uppercase inline-flex items-center gap-1">
+                <span class="text-[#94002D]">✦</span> SaaS &bull; UX
+              </span>
+            </div>
+            <h3 class="font-display italic text-2xl font-bold text-[#94002D] mt-2 group-hover:text-[#7B0024] transition-colors">
+              AI powered dashboard experience
+            </h3>
+            <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed mt-1.5 font-medium">
+              A personalised onboarding experience which uses AI to tailor the questions and modifies the dashboard as per the user input.
+            </p>
+          </div>
         </div>
       </article>
 
-      <!-- Project Card 3: Data security for enterprise products -->
-      <article class="flex flex-col">
-        <div
-          class="relative w-full aspect-[16/10] bg-[#FFFCEB] rounded-2xl overflow-hidden border border-[#EFE2BA] shadow-sm group">
+      <!-- Project Card 3: Data security for enterprise products (Enterprise • Security) -->
+      <article class="card-retro rounded-3xl p-4 sm:p-5 flex flex-col group relative overflow-hidden">
+        <div class="relative w-full aspect-[16/10] bg-[#FFFCEB] rounded-2xl overflow-hidden border-2 border-[#EFE2BA] group-hover:border-[#FFA700] transition-colors">
           <img src="https://placehold.co/800x500/f3f4f6/333333?text=Data+Security+Enterprise"
             alt="Data security for enterprise products preview"
-            class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy">
-          <span
-            class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[11px] font-medium px-3 py-1 rounded-full border border-white/10">
-            Under NDA
+          
+          <span class="absolute top-3 right-3 bg-[#1C0B12]/85 backdrop-blur-md text-[#FFF2A9] text-[11px] font-bold px-3 py-1 rounded-full border border-[#FFA700]/50 shadow-md sticker-wobble flex items-center gap-1">
+            <span>🔒</span> Under NDA
           </span>
         </div>
-        <div class="mt-4">
-          <span class="text-[11px] uppercase tracking-wider text-[#94002D] font-semibold">Enterprise &bull;
-            Security</span>
-          <h3 class="text-lg font-semibold text-zinc-900 mt-0.5">Data security for enterprise products</h3>
-          <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed mt-1">
-            Shields your sensitive, private, and regulated enterprise data is always shielded from cyber attacks,
-            ransomware, leaks, and unauthorised access.
-          </p>
+
+        <div class="pt-4 pb-2 px-1 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="bg-[#FFA700]/20 text-[#8F4E00] border border-[#FFA700]/50 px-3 py-0.5 rounded-full text-[11px] font-bold tracking-wider uppercase inline-flex items-center gap-1">
+                <span class="text-[#94002D]">✦</span> Enterprise &bull; Security
+              </span>
+            </div>
+            <h3 class="font-display italic text-2xl font-bold text-[#94002D] mt-2 group-hover:text-[#7B0024] transition-colors">
+              Data security for enterprise products
+            </h3>
+            <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed mt-1.5 font-medium">
+              Shields your sensitive, private, and regulated enterprise data from cyber attacks, ransomware, leaks, and unauthorized access.
+            </p>
+          </div>
         </div>
       </article>
 
-      <!-- Project Card 4: Airport super app -->
-      <article class="flex flex-col">
-        <div
-          class="relative w-full aspect-[16/10] bg-[#16181D] rounded-2xl overflow-hidden border border-[#EFE2BA] shadow-sm group">
+      <!-- Project Card 4: Airport super app (Mobile • Travel) -->
+      <article class="card-retro rounded-3xl p-4 sm:p-5 flex flex-col group relative overflow-hidden">
+        <div class="relative w-full aspect-[16/10] bg-[#16181D] rounded-2xl overflow-hidden border-2 border-[#EFE2BA] group-hover:border-[#FFA700] transition-colors">
           <img src="https://placehold.co/800x500/111827/ffffff?text=Airport+Super+App" alt="Airport super app preview"
-            class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy">
-          <span
-            class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[11px] font-medium px-3 py-1 rounded-full border border-white/10">
-            Under NDA
+          
+          <span class="absolute top-3 right-3 bg-[#1C0B12]/85 backdrop-blur-md text-[#FFF2A9] text-[11px] font-bold px-3 py-1 rounded-full border border-[#FFA700]/50 shadow-md sticker-wobble flex items-center gap-1">
+            <span>🔒</span> Under NDA
           </span>
         </div>
-        <div class="mt-4">
-          <span class="text-[11px] uppercase tracking-wider text-[#94002D] font-semibold">Mobile &bull; Travel</span>
-          <h3 class="text-lg font-semibold text-zinc-900 mt-0.5">Airport super app</h3>
-          <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed mt-1">
-            Bengaluru’s Kempegowda International Airport (BLR) is redefining the airport experience by integrating
-            diverse services into a single, seamless platform.
-          </p>
+
+        <div class="pt-4 pb-2 px-1 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="bg-[#94002D]/10 text-[#94002D] border border-[#94002D]/30 px-3 py-0.5 rounded-full text-[11px] font-bold tracking-wider uppercase inline-flex items-center gap-1">
+                <span class="text-[#FFA700]">✦</span> Mobile &bull; Travel
+              </span>
+            </div>
+            <h3 class="font-display italic text-2xl font-bold text-[#94002D] mt-2 group-hover:text-[#7B0024] transition-colors">
+              Airport super app
+            </h3>
+            <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed mt-1.5 font-medium">
+              Bengaluru’s Kempegowda International Airport (BLR) is redefining the airport experience by integrating diverse services into a single, seamless platform.
+            </p>
+          </div>
         </div>
       </article>
 
-      <!-- Project Card 5: Figma plugin -->
-      <article class="flex flex-col">
-        <div
-          class="relative w-full aspect-[16/10] bg-[#0E281E] rounded-2xl overflow-hidden border border-[#EFE2BA] shadow-sm group">
+      <!-- Project Card 5: Figma plugin (Design Tooling) -->
+      <article class="card-retro rounded-3xl p-4 sm:p-5 flex flex-col group relative overflow-hidden">
+        <div class="relative w-full aspect-[16/10] bg-[#0E281E] rounded-2xl overflow-hidden border-2 border-[#EFE2BA] group-hover:border-[#FFA700] transition-colors">
           <img src="https://placehold.co/800x500/0f3829/ffffff?text=Figma+Design-to-Dev+Plugin"
             alt="Figma plugin preview"
-            class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy">
         </div>
-        <div class="mt-4">
-          <span class="text-[11px] uppercase tracking-wider text-[#94002D] font-semibold">Design Tooling</span>
-          <h3 class="text-lg font-semibold text-zinc-900 mt-0.5">Figma plugin</h3>
-          <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed mt-1">
-            Designed to streamline design-to-dev handoff, it provides accurate design specs, copy-ready code snippets,
-            and seamless component integration all without a learning curve.
-          </p>
+
+        <div class="pt-4 pb-2 px-1 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="bg-[#BFDFFF]/60 text-[#0f3c68] border border-[#BFDFFF] px-3 py-0.5 rounded-full text-[11px] font-bold tracking-wider uppercase inline-flex items-center gap-1">
+                <span class="text-[#FFA700]">✦</span> Design Tooling
+              </span>
+            </div>
+            <h3 class="font-display italic text-2xl font-bold text-[#94002D] mt-2 group-hover:text-[#7B0024] transition-colors">
+              Figma plugin
+            </h3>
+            <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed mt-1.5 font-medium">
+              Designed to streamline design-to-dev handoff, providing accurate design specs, copy-ready code snippets, and seamless component integration all without a learning curve.
+            </p>
+          </div>
         </div>
       </article>
 
-      <!-- Project Card 6: Connector -->
-      <article class="flex flex-col">
-        <div
-          class="relative w-full aspect-[16/10] bg-[#F7F8FA] rounded-2xl overflow-hidden border border-[#EFE2BA] shadow-sm group flex items-center justify-center">
+      <!-- Project Card 6: Connector (Developer Experience) -->
+      <article class="card-retro rounded-3xl p-4 sm:p-5 flex flex-col group relative overflow-hidden">
+        <div class="relative w-full aspect-[16/10] bg-[#F7F8FA] rounded-2xl overflow-hidden border-2 border-[#EFE2BA] group-hover:border-[#FFA700] transition-colors flex items-center justify-center">
           <img src="https://placehold.co/800x500/f8fafc/334155?text=Connector+Integration"
             alt="Connector integration preview"
-            class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy">
-          <span
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#94002D] text-[#FFF2A9] text-xs font-semibold px-4 py-1.5 rounded-full shadow-lg border border-[#FFA700]/30">
-            Coming soon
+          
+          <!-- Tactile Apple/Star Seal "Coming Soon" Sticker -->
+          <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#FFA700] text-[#1C0B12] text-xs font-black px-5 py-2 rounded-full shadow-lg border-2 border-[#1C0B12] sticker-wobble flex items-center gap-1.5">
+            <span>🍏</span> Coming soon
           </span>
         </div>
-        <div class="mt-4">
-          <span class="text-[11px] uppercase tracking-wider text-[#94002D] font-semibold">Developer Experience</span>
-          <h3 class="text-lg font-semibold text-zinc-900 mt-0.5">Connector</h3>
-          <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed mt-1 mb-2">
-            Connect gmail inbox to your application under 10 lines of code. This project is half cooked will be adding
-            soon.
-          </p>
-          <a href="#"
-            class="inline-flex items-center gap-1 text-sm font-medium text-[#94002D] hover:text-[#FFA700] transition-colors">
-            Try now
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
-            </svg>
-          </a>
+
+        <div class="pt-4 pb-2 px-1 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="bg-[#FFA700]/20 text-[#8F4E00] border border-[#FFA700]/50 px-3 py-0.5 rounded-full text-[11px] font-bold tracking-wider uppercase inline-flex items-center gap-1">
+                <span class="text-[#94002D]">✦</span> Developer Experience
+              </span>
+            </div>
+            <h3 class="font-display italic text-2xl font-bold text-[#94002D] mt-2 group-hover:text-[#7B0024] transition-colors">
+              Connector
+            </h3>
+            <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed mt-1.5 mb-3 font-medium">
+              Connect Gmail inbox to your application in under 10 lines of code. This project is half cooked and will be added soon.
+            </p>
+            <a href="#"
+              class="inline-flex items-center gap-1.5 text-sm font-bold text-[#94002D] hover:text-[#FFA700] transition-colors group/link">
+              <span>Try now</span>
+              <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+              </svg>
+            </a>
+          </div>
         </div>
       </article>
 
     </div>
   </section>
 
-  <!-- Brands Section -->
-  <section class="max-w-5xl mx-auto px-6 py-20">
+  <!-- ========================================================= -->
+  <!-- BRANDS SECTION (Vintage Carnival Ticket / Stamp Ribbon) -->
+  <!-- ========================================================= -->
+  <section class="max-w-5xl mx-auto px-6 py-16">
     <div class="text-center mb-8">
-      <span class="text-[11px] font-semibold text-zinc-400 tracking-[0.25em] uppercase">
+      <span class="inline-flex items-center gap-2 text-xs font-black text-[#94002D] tracking-[0.28em] uppercase">
+        <span class="text-[#FFA700] text-sm">✦</span>
         BRANDS I'VE WORKED WITH
+        <span class="text-[#FFA700] text-sm">✦</span>
       </span>
     </div>
 
-    <div
-      class="flex items-center justify-center gap-8 sm:gap-14 flex-wrap opacity-75 grayscale hover:grayscale-0 transition-all duration-300">
-      <!-- Brand 1: MUTUAL FUND -->
-      <div class="flex items-center gap-1.5 font-bold text-zinc-800 text-xs tracking-tight">
-        <svg class="w-5 h-5 text-zinc-700" viewBox="0 0 24 24" fill="currentColor">
-          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
-          <path d="M7 12l3 3 7-7" />
-        </svg>
-        <div class="flex flex-col leading-none">
-          <span class="text-[9px] uppercase tracking-wider">MUTUAL</span>
-          <span class="text-[11px] tracking-widest font-extrabold">FUND</span>
+    <!-- Brands Carousel Ticket Strip with Double Borders -->
+    <div class="bg-[#FFFCEB] border-2 border-[#EFE2BA] rounded-3xl p-6 sm:p-8 shadow-[4px_4px_0_#EFE2BA]">
+      <div class="flex items-center justify-center gap-8 sm:gap-12 flex-wrap">
+        
+        <!-- Brand 1: MUTUAL FUND -->
+        <div class="p-3 rounded-2xl bg-white/60 border border-[#EFE2BA] hover:scale-105 hover:rotate-1 transition-transform cursor-pointer flex items-center gap-1.5 font-bold text-zinc-800 text-xs tracking-tight">
+          <svg class="w-5 h-5 text-[#94002D]" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
+            <path d="M7 12l3 3 7-7" />
+          </svg>
+          <div class="flex flex-col leading-none">
+            <span class="text-[9px] uppercase tracking-wider">MUTUAL</span>
+            <span class="text-[11px] tracking-widest font-extrabold text-[#94002D]">FUND</span>
+          </div>
         </div>
-      </div>
 
-      <!-- Brand 2: hp Connect -->
-      <div class="flex items-center gap-1 font-semibold text-zinc-800 text-sm">
-        <div
-          class="w-6 h-6 rounded-full bg-[#1A5C8E] text-white flex items-center justify-center font-bold text-xs italic">
-          hp
+        <!-- Brand 2: hp Connect -->
+        <div class="p-3 rounded-2xl bg-white/60 border border-[#EFE2BA] hover:scale-105 hover:-rotate-1 transition-transform cursor-pointer flex items-center gap-1 font-semibold text-zinc-800 text-sm">
+          <div class="w-6 h-6 rounded-full bg-[#1A5C8E] text-white flex items-center justify-center font-bold text-xs italic shadow-sm">
+            hp
+          </div>
+          <span class="font-bold text-xs text-zinc-800 ml-1">Connect</span>
         </div>
-        <span class="font-normal text-xs text-zinc-700 ml-1">Connect</span>
-      </div>
 
-      <!-- Brand 3: NPCI -->
-      <div class="flex items-center font-black tracking-wider text-zinc-800 text-sm">
-        <span>NPCI</span>
-        <span class="inline-block w-1.5 h-3.5 bg-[#FFA700] ml-0.5 -skew-x-12"></span>
-      </div>
+        <!-- Brand 3: NPCI -->
+        <div class="p-3 rounded-2xl bg-white/60 border border-[#EFE2BA] hover:scale-105 hover:rotate-1 transition-transform cursor-pointer flex items-center font-black tracking-wider text-zinc-800 text-sm">
+          <span>NPCI</span>
+          <span class="inline-block w-2 h-4 bg-[#FFA700] ml-1 -skew-x-12"></span>
+        </div>
 
-      <!-- Brand 4: myTVS -->
-      <div class="flex items-center font-bold text-zinc-800 text-sm">
-        <span class="text-[#94002D] font-serif italic text-base">my</span><span class="tracking-tighter">TVS</span>
-      </div>
+        <!-- Brand 4: myTVS -->
+        <div class="p-3 rounded-2xl bg-white/60 border border-[#EFE2BA] hover:scale-105 hover:-rotate-1 transition-transform cursor-pointer flex items-center font-bold text-zinc-800 text-sm">
+          <span class="text-[#94002D] font-display italic text-base">my</span><span class="tracking-tighter">TVS</span>
+        </div>
 
-      <!-- Brand 5: quickplay -->
-      <div class="flex items-center gap-1 font-semibold text-zinc-800 text-xs">
-        <span
-          class="w-4 h-4 rounded-full border-2 border-[#FFA700] flex items-center justify-center text-[8px] text-[#FFA700] font-bold">Q</span>
-        <span>quickplay</span>
-      </div>
+        <!-- Brand 5: quickplay -->
+        <div class="p-3 rounded-2xl bg-white/60 border border-[#EFE2BA] hover:scale-105 hover:rotate-1 transition-transform cursor-pointer flex items-center gap-1.5 font-bold text-zinc-800 text-xs">
+          <span class="w-4 h-4 rounded-full border-2 border-[#FFA700] flex items-center justify-center text-[9px] text-[#FFA700] font-black">Q</span>
+          <span>quickplay</span>
+        </div>
 
-      <!-- Brand 6: MMTV -->
-      <div class="flex items-center gap-1 font-bold text-zinc-800 text-xs">
-        <span class="text-[#94002D] font-extrabold">MM</span><span>TV</span>
-      </div>
+        <!-- Brand 6: MMTV -->
+        <div class="p-3 rounded-2xl bg-white/60 border border-[#EFE2BA] hover:scale-105 hover:-rotate-1 transition-transform cursor-pointer flex items-center gap-1 font-bold text-zinc-800 text-xs">
+          <span class="text-[#94002D] font-black">MM</span><span>TV</span>
+        </div>
 
-      <!-- Brand 7: SECI -->
-      <div class="flex items-center font-black text-zinc-800 text-xs tracking-widest">
-        <span class="text-emerald-700">S E C I</span>
+        <!-- Brand 7: SECI -->
+        <div class="p-3 rounded-2xl bg-white/60 border border-[#EFE2BA] hover:scale-105 hover:rotate-1 transition-transform cursor-pointer flex items-center font-black text-zinc-800 text-xs tracking-widest">
+          <span class="text-emerald-700">S E C I</span>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- What I Bring To The Table (Orbit / Skills Constellation) -->
+  <!-- ========================================================= -->
+  <!-- SKILLS CONSTELLATION (Fun Tactile Candy Badges & Jiggle) -->
+  <!-- ========================================================= -->
   <section class="max-w-5xl mx-auto px-6 py-20 relative">
 
-    <!-- Central Gyroscope Icon -->
+    <!-- Central Carousel Star Icon -->
     <div class="flex justify-center mb-4">
-      <div class="w-10 h-10 flex items-center justify-center text-zinc-800">
-        <svg class="w-8 h-8 text-zinc-700" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6">
-          <ellipse cx="20" cy="20" rx="16" ry="6" />
-          <ellipse cx="20" cy="20" rx="6" ry="16" />
-          <circle cx="20" cy="20" r="2.5" fill="#FFA700" />
+      <div class="w-12 h-12 flex items-center justify-center text-[#FFA700] anim-wobble">
+        <svg class="w-9 h-9" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+          <ellipse cx="20" cy="20" rx="16" ry="6" stroke="#94002D" />
+          <ellipse cx="20" cy="20" rx="6" ry="16" stroke="#FFA700" />
+          <circle cx="20" cy="20" r="3" fill="#FFA700" />
         </svg>
       </div>
     </div>
 
-    <!-- Section Title & Subtitle -->
+    <!-- Section Title & Subtitle in Fraunces -->
     <div class="text-center max-w-xl mx-auto mb-16">
-      <h2 class="font-serif-title italic text-4xl sm:text-5xl md:text-6xl text-zinc-900 font-normal leading-tight">
+      <h2 class="font-display italic text-4xl sm:text-5xl md:text-6xl text-[#94002D] font-extrabold leading-tight">
         What I bring to<br>the table
       </h2>
-      <p class="text-zinc-600 text-xs sm:text-sm mt-3 leading-relaxed">
-        Digital experiences that engage users and help your company stand out from day one
+      <p class="text-zinc-600 text-xs sm:text-sm mt-3 font-semibold flex items-center justify-center gap-1.5">
+        <span class="text-[#FFA700]">✦</span>
+        Digital experiences that engage users and help your company stand out
+        <span class="text-[#FFA700]">✦</span>
       </p>
     </div>
 
-    <!-- Desktop Pill Badges Constellation -->
+    <!-- Desktop Tactile Pill Badges Constellation with 3D Depth & Jiggle -->
     <div class="hidden md:block relative h-72 w-full max-w-4xl mx-auto">
 
       <!-- Top Row -->
       <div
-        class="absolute top-2 left-[12%] bg-[#BFDFFF]/50 text-[#0f3c68] border border-[#BFDFFF] px-4 py-1.5 rounded-full text-xs font-medium shadow-sm hover:scale-105 transition-transform cursor-default">
-        Design Systems
+        class="absolute top-2 left-[10%] bg-[#BFDFFF]/70 text-[#0f3c68] border-2 border-[#BFDFFF] shadow-[0_4px_0_#80B8F0] px-4 py-2 rounded-full text-xs font-bold hover:scale-110 hover:-rotate-2 transition-all cursor-pointer active:scale-95">
+        ✦ Design Systems
       </div>
 
       <div
-        class="absolute top-0 left-[42%] bg-[#FFF2A9] text-[#704200] border border-[#FFE675] px-4 py-1.5 rounded-full text-xs font-medium shadow-sm hover:scale-105 transition-transform cursor-default">
-        Product Design
+        class="absolute top-0 left-[40%] bg-[#FFF2A9] text-[#704200] border-2 border-[#FFE260] shadow-[0_4px_0_#E5C538] px-4 py-2 rounded-full text-xs font-bold hover:scale-110 hover:rotate-2 transition-all cursor-pointer active:scale-95">
+        ✦ Product Design
       </div>
 
       <div
-        class="absolute top-6 right-[14%] bg-[#94002D]/10 text-[#94002D] border border-[#94002D]/25 px-4 py-1.5 rounded-full text-xs font-medium shadow-sm hover:scale-105 transition-transform cursor-default">
-        User Experience Design
+        class="absolute top-6 right-[12%] bg-[#94002D] text-[#FFF2A9] border-2 border-[#5C001C] shadow-[0_4px_0_#5C001C] px-4 py-2 rounded-full text-xs font-bold hover:scale-110 hover:-rotate-2 transition-all cursor-pointer active:scale-95">
+        ✦ User Experience Design
       </div>
 
       <!-- Mid Row -->
       <div
-        class="absolute top-28 left-[4%] bg-[#FFA700]/15 text-[#945200] border border-[#FFA700]/40 px-4 py-1.5 rounded-full text-xs font-medium shadow-sm hover:scale-105 transition-transform cursor-default">
-        User Research
+        class="absolute top-28 left-[2%] bg-[#FFA700] text-[#1C0B12] border-2 border-[#B87400] shadow-[0_4px_0_#B87400] px-4 py-2 rounded-full text-xs font-extrabold hover:scale-110 hover:rotate-3 transition-all cursor-pointer active:scale-95">
+        ✦ User Research
       </div>
 
       <div
-        class="absolute top-24 right-[5%] bg-[#BFDFFF]/50 text-[#0f3c68] border border-[#BFDFFF] px-4 py-1.5 rounded-full text-xs font-medium shadow-sm hover:scale-105 transition-transform cursor-default">
-        User Interface Design
+        class="absolute top-24 right-[4%] bg-[#BFDFFF]/70 text-[#0f3c68] border-2 border-[#BFDFFF] shadow-[0_4px_0_#80B8F0] px-4 py-2 rounded-full text-xs font-bold hover:scale-110 hover:-rotate-3 transition-all cursor-pointer active:scale-95">
+        ✦ User Interface Design
       </div>
 
       <!-- Bottom Row -->
       <div
-        class="absolute bottom-6 left-[8%] bg-[#94002D]/10 text-[#94002D] border border-[#94002D]/25 px-4 py-1.5 rounded-full text-xs font-medium shadow-sm hover:scale-105 transition-transform cursor-default">
-        Design to Business impacts
+        class="absolute bottom-6 left-[6%] bg-[#94002D]/15 text-[#94002D] border-2 border-[#94002D]/40 shadow-[0_4px_0_#94002D]/30 px-4 py-2 rounded-full text-xs font-bold hover:scale-110 hover:rotate-2 transition-all cursor-pointer active:scale-95">
+        ✦ Design to Business impacts
       </div>
 
       <div
-        class="absolute bottom-2 left-[36%] bg-[#FFF2A9] text-[#704200] border border-[#FFE675] px-4 py-1.5 rounded-full text-xs font-medium shadow-sm hover:scale-105 transition-transform cursor-default">
-        0 to 1 development
+        class="absolute bottom-2 left-[34%] bg-[#FFF2A9] text-[#704200] border-2 border-[#FFE260] shadow-[0_4px_0_#E5C538] px-4 py-2 rounded-full text-xs font-bold hover:scale-110 hover:-rotate-2 transition-all cursor-pointer active:scale-95">
+        ✦ 0 to 1 development
       </div>
 
       <div
-        class="absolute bottom-4 right-[32%] bg-[#FFA700]/20 text-[#8F4E00] border border-[#FFA700]/50 px-4 py-1.5 rounded-full text-xs font-semibold shadow-sm hover:scale-105 transition-transform cursor-default">
-        Vibe coding
+        class="absolute bottom-4 right-[30%] bg-[#FFA700] text-[#1C0B12] border-2 border-[#B87400] shadow-[0_4px_0_#B87400] px-5 py-2.5 rounded-full text-xs font-black hover:scale-115 hover:rotate-3 transition-all cursor-pointer active:scale-95">
+        ✦ Vibe coding ✦
       </div>
 
       <div
-        class="absolute bottom-10 right-[8%] bg-[#BFDFFF]/50 text-[#0f3c68] border border-[#BFDFFF] px-4 py-1.5 rounded-full text-xs font-medium shadow-sm hover:scale-105 transition-transform cursor-default">
-        Engineering knowledge
+        class="absolute bottom-10 right-[6%] bg-[#BFDFFF]/70 text-[#0f3c68] border-2 border-[#BFDFFF] shadow-[0_4px_0_#80B8F0] px-4 py-2 rounded-full text-xs font-bold hover:scale-110 hover:-rotate-2 transition-all cursor-pointer active:scale-95">
+        ✦ Engineering knowledge
       </div>
     </div>
 
     <!-- Mobile Pill Badges Flow -->
-    <div class="md:hidden flex flex-wrap justify-center gap-2.5 max-w-md mx-auto">
-      <span
-        class="bg-[#FFF2A9] text-[#704200] border border-[#FFE675] px-3.5 py-1.5 rounded-full text-xs font-medium shadow-sm">Product
-        Design</span>
-      <span
-        class="bg-[#94002D]/10 text-[#94002D] border border-[#94002D]/25 px-3.5 py-1.5 rounded-full text-xs font-medium shadow-sm">User
-        Experience Design</span>
-      <span
-        class="bg-[#BFDFFF]/50 text-[#0f3c68] border border-[#BFDFFF] px-3.5 py-1.5 rounded-full text-xs font-medium shadow-sm">User
-        Interface Design</span>
-      <span
-        class="bg-[#BFDFFF]/50 text-[#0f3c68] border border-[#BFDFFF] px-3.5 py-1.5 rounded-full text-xs font-medium shadow-sm">Design
-        Systems</span>
-      <span
-        class="bg-[#FFA700]/15 text-[#945200] border border-[#FFA700]/40 px-3.5 py-1.5 rounded-full text-xs font-medium shadow-sm">User
-        Research</span>
-      <span
-        class="bg-[#94002D]/10 text-[#94002D] border border-[#94002D]/25 px-3.5 py-1.5 rounded-full text-xs font-medium shadow-sm">Design
-        to Business impacts</span>
-      <span
-        class="bg-[#FFF2A9] text-[#704200] border border-[#FFE675] px-3.5 py-1.5 rounded-full text-xs font-medium shadow-sm">0
-        to 1 development</span>
-      <span
-        class="bg-[#BFDFFF]/50 text-[#0f3c68] border border-[#BFDFFF] px-3.5 py-1.5 rounded-full text-xs font-medium shadow-sm">Engineering
-        knowledge</span>
-      <span
-        class="bg-[#FFA700]/20 text-[#8F4E00] border border-[#FFA700]/50 px-3.5 py-1.5 rounded-full text-xs font-semibold shadow-sm">Vibe
-        coding</span>
+    <div class="md:hidden flex flex-wrap justify-center gap-3 max-w-md mx-auto">
+      <span class="bg-[#FFF2A9] text-[#704200] border-2 border-[#FFE260] shadow-[0_3px_0_#E5C538] px-3.5 py-1.5 rounded-full text-xs font-bold">✦ Product Design</span>
+      <span class="bg-[#94002D] text-[#FFF2A9] border-2 border-[#5C001C] shadow-[0_3px_0_#5C001C] px-3.5 py-1.5 rounded-full text-xs font-bold">✦ User Experience Design</span>
+      <span class="bg-[#BFDFFF]/80 text-[#0f3c68] border-2 border-[#BFDFFF] shadow-[0_3px_0_#80B8F0] px-3.5 py-1.5 rounded-full text-xs font-bold">✦ User Interface Design</span>
+      <span class="bg-[#BFDFFF]/80 text-[#0f3c68] border-2 border-[#BFDFFF] shadow-[0_3px_0_#80B8F0] px-3.5 py-1.5 rounded-full text-xs font-bold">✦ Design Systems</span>
+      <span class="bg-[#FFA700] text-[#1C0B12] border-2 border-[#B87400] shadow-[0_3px_0_#B87400] px-3.5 py-1.5 rounded-full text-xs font-black">✦ User Research</span>
+      <span class="bg-[#94002D]/15 text-[#94002D] border-2 border-[#94002D]/40 shadow-[0_3px_0_#94002D]/30 px-3.5 py-1.5 rounded-full text-xs font-bold">✦ Design to Business impacts</span>
+      <span class="bg-[#FFF2A9] text-[#704200] border-2 border-[#FFE260] shadow-[0_3px_0_#E5C538] px-3.5 py-1.5 rounded-full text-xs font-bold">✦ 0 to 1 development</span>
+      <span class="bg-[#BFDFFF]/80 text-[#0f3c68] border-2 border-[#BFDFFF] shadow-[0_3px_0_#80B8F0] px-3.5 py-1.5 rounded-full text-xs font-bold">✦ Engineering knowledge</span>
+      <span class="bg-[#FFA700] text-[#1C0B12] border-2 border-[#B87400] shadow-[0_3px_0_#B87400] px-4 py-2 rounded-full text-xs font-black">✦ Vibe coding ✦</span>
     </div>
   </section>
 
-  <!-- About Me Section (Dark Card with 3D wireframe) -->
-  <section class="max-w-4xl mx-auto px-6 py-12">
-    <div
-      class="relative bg-gradient-to-b from-[#1C0B12] via-[#15070D] to-[#0E0308] rounded-3xl p-8 sm:p-14 overflow-hidden border border-[#94002D]/40 shadow-2xl text-center">
+  <!-- ========================================================= -->
+  <!-- ABOUT ME SECTION (Whimsical Nighttime Theatre & Cameo) -->
+  <!-- ========================================================= -->
+  <section class="max-w-4xl mx-auto px-6 py-12 relative">
+    
+    <!-- Pegasus Peeking Cameo on top-left of card -->
+    <div class="hidden sm:block absolute -top-10 left-10 z-20 anim-float-left pointer-events-none">
+      <img src="pegasus-left.png" alt="Pegasus Cameo" class="w-24 h-auto drop-shadow-[0_10px_15px_rgba(0,0,0,0.3)]">
+    </div>
 
-      <!-- Perspective Wireframe Grid at bottom -->
-      <div class="absolute inset-x-0 bottom-0 h-48 opacity-30 pointer-events-none overflow-hidden">
+    <!-- Deep Night Theatre Card -->
+    <div class="relative bg-gradient-to-b from-[#1C0B12] via-[#14060C] to-[#0A0206] rounded-3xl p-8 sm:p-14 overflow-hidden border-4 border-[#FFA700]/40 shadow-2xl text-center">
+
+      <!-- Perspective Wireframe Grid at bottom with glowing amber lines -->
+      <div class="absolute inset-x-0 bottom-0 h-48 opacity-35 pointer-events-none overflow-hidden">
         <div class="w-[140%] -ml-[20%] h-full perspective-grid"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0E0308]/60 via-transparent to-[#1C0B12]"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0206]/70 via-transparent to-[#1C0B12]"></div>
       </div>
 
-      <!-- Isometric 3D icon in center -->
+      <!-- Whimsical Star Emblem in center -->
       <div class="relative z-10 flex justify-center mb-5">
-        <div class="w-12 h-12 flex items-center justify-center text-[#FFA700]">
-          <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
-          </svg>
+        <div class="w-14 h-14 rounded-2xl bg-[#FFA700]/15 border-2 border-[#FFA700] flex items-center justify-center text-[#FFA700] shadow-lg anim-twinkle">
+          <span class="text-2xl font-black">✦</span>
         </div>
       </div>
 
-      <!-- About me Title -->
-      <h2 class="relative z-10 font-serif-title italic text-3xl sm:text-4xl text-white font-normal mb-6">
-        About me
+      <!-- About me Title in Fraunces -->
+      <h2 class="relative z-10 font-display italic text-3xl sm:text-4xl text-[#FFF2A9] font-extrabold mb-6">
+        ✦ About me ✦
       </h2>
 
       <!-- Bio paragraphs -->
-      <div class="relative z-10 max-w-xl mx-auto text-zinc-300 text-xs sm:text-sm leading-relaxed space-y-4 font-light">
+      <div class="relative z-10 max-w-xl mx-auto text-zinc-200 text-xs sm:text-sm leading-relaxed space-y-4 font-normal">
         <p>
           Hi, I'm Alkemist, a UX/UI designer with 4 years specializing in solving complex problems, crafting intuitive
           interfaces, and building scalable design systems.
@@ -615,12 +704,11 @@
         </p>
       </div>
 
-      <!-- Resume CTA Button -->
+      <!-- Chunky Amber CTA Button -->
       <div class="relative z-10 mt-8">
-        <a href="#contact"
-          class="inline-flex items-center gap-1.5 bg-[#FFA700] hover:bg-[#E69600] text-[#1C0B12] text-xs sm:text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-200 shadow-md shadow-[#FFA700]/25 hover:scale-105">
-          View Resume
-          <svg class="w-3.5 h-3.5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <a href="#contact" class="btn-chunky-amber inline-flex items-center gap-2 text-xs sm:text-sm font-black px-7 py-3 rounded-full cursor-pointer">
+          View Resume ✦
+          <svg class="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
           </svg>
         </a>
@@ -629,57 +717,73 @@
     </div>
   </section>
 
-  <!-- Ready to build something amazing? & Contact Table Card -->
-  <section id="contact" class="max-w-4xl mx-auto px-6 pt-16 pb-20 text-center">
+  <!-- ========================================================= -->
+  <!-- CONTACT SECTION (Whimsical Telegram / Postcard Style) -->
+  <!-- ========================================================= -->
+  <section id="contact" class="max-w-4xl mx-auto px-6 pt-16 pb-20 text-center relative">
 
-    <!-- Gyroscope icon -->
+    <!-- Pegasus Cameo on top-right of Contact -->
+    <div class="hidden sm:block absolute top-8 right-8 z-10 anim-float-right pointer-events-none">
+      <img src="pegasus-right.png" alt="Pegasus Messenger" class="w-24 h-auto drop-shadow-[0_10px_15px_rgba(0,0,0,0.2)]">
+    </div>
+
+    <!-- Icon -->
     <div class="flex justify-center mb-3">
-      <div class="w-8 h-8 flex items-center justify-center text-zinc-800">
-        <svg class="w-7 h-7 text-zinc-700" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6">
-          <ellipse cx="20" cy="20" rx="14" ry="6" />
-          <ellipse cx="20" cy="20" rx="6" ry="14" />
-          <circle cx="20" cy="20" r="2" fill="#94002D" />
-        </svg>
+      <div class="w-10 h-10 flex items-center justify-center text-[#94002D] anim-wobble">
+        <span class="text-2xl text-[#FFA700]">✦</span>
       </div>
     </div>
 
-    <h2 class="font-serif-title italic text-4xl sm:text-5xl md:text-6xl text-zinc-900 font-normal tracking-tight mb-2">
+    <h2 class="font-display italic text-4xl sm:text-5xl md:text-6xl text-[#94002D] font-extrabold tracking-tight mb-2">
       Ready to build something<br>amazing?
     </h2>
-    <p class="text-zinc-500 text-xs sm:text-sm mb-10">
+    <p class="text-zinc-600 text-xs sm:text-sm mb-10 font-bold flex items-center justify-center gap-1.5">
+      <span class="text-[#FFA700]">✦</span>
       I'd love to connect with you!
+      <span class="text-[#FFA700]">✦</span>
     </p>
 
-    <!-- Contact Info Card (Table-like rows) -->
-    <div class="max-w-lg mx-auto bg-[#FFFCEB] border border-[#EFE2BA] rounded-2xl p-4 sm:p-6 shadow-sm text-left">
+    <!-- Contact Info Card (Retro Postcard / Telegram) -->
+    <div class="max-w-lg mx-auto bg-[#FFFCEB] border-3 border-[#EFE2BA] rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0_#94002D] text-left relative overflow-hidden">
+      
+      <!-- Top Decorative Harlequin Strip in Postcard -->
+      <div class="w-full h-2 rounded-full mb-5 bg-gradient-to-r from-[#FFA700] via-[#FFF2A9] to-[#BFDFFF] opacity-80"></div>
 
       <!-- Email Row -->
-      <div class="flex items-center justify-between py-3 border-b border-[#EFE2BA] text-xs sm:text-sm">
-        <span class="text-zinc-500 font-medium">Email</span>
+      <div class="flex items-center justify-between py-3.5 border-b-2 border-[#EFE2BA] text-xs sm:text-sm group">
+        <div class="flex items-center gap-2">
+          <span class="text-base text-[#FFA700]">✉️</span>
+          <span class="text-zinc-600 font-bold">Email</span>
+        </div>
         <a href="mailto:alkemist.design@gmail.com"
-          class="text-zinc-900 font-mono text-xs sm:text-sm hover:text-[#94002D] transition-colors">
+          class="text-zinc-900 font-mono text-xs sm:text-sm font-bold hover:text-[#94002D] transition-colors group-hover:translate-x-1 duration-200">
           alkemist.design@gmail.com
         </a>
       </div>
 
       <!-- LinkedIn Row -->
-      <div class="flex items-center justify-between py-3 border-b border-[#EFE2BA] text-xs sm:text-sm">
-        <span class="text-zinc-500 font-medium">LinkedIn</span>
+      <div class="flex items-center justify-between py-3.5 border-b-2 border-[#EFE2BA] text-xs sm:text-sm group">
+        <div class="flex items-center gap-2">
+          <span class="text-base text-[#80B8F0]">💼</span>
+          <span class="text-zinc-600 font-bold">LinkedIn</span>
+        </div>
         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-          class="text-zinc-900 font-mono text-xs sm:text-sm hover:text-[#94002D] transition-colors">
+          class="text-zinc-900 font-mono text-xs sm:text-sm font-bold hover:text-[#94002D] transition-colors group-hover:translate-x-1 duration-200">
           alkemist-ux-designer
         </a>
       </div>
 
       <!-- Resume Row -->
-      <div class="flex items-center justify-between py-3 text-xs sm:text-sm">
-        <span class="text-zinc-500 font-medium">Resume</span>
+      <div class="flex items-center justify-between py-3.5 text-xs sm:text-sm group">
+        <div class="flex items-center gap-2">
+          <span class="text-base text-[#94002D]">📄</span>
+          <span class="text-zinc-600 font-bold">Resume</span>
+        </div>
         <a href="#"
-          class="inline-flex items-center gap-1 text-[#94002D] font-medium hover:text-[#FFA700] transition-colors">
-          View
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
+          class="inline-flex items-center gap-1.5 text-[#94002D] font-black hover:text-[#FFA700] transition-colors group-hover:translate-x-1 duration-200">
+          View ✦
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
           </svg>
         </a>
       </div>
@@ -687,13 +791,25 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ========================================================= -->
+  <!-- FOOTER (Double Stripe Retro Ribbon & Typography) -->
+  <!-- ========================================================= -->
   <footer class="max-w-6xl mx-auto px-6 pb-12 text-center">
-    <div class="font-serif-title italic text-xl text-[#94002D] font-normal tracking-tight">
-      Alkemist's Portfolio
+    
+    <!-- Double Horizontal Ribbon Stripe -->
+    <div class="max-w-md mx-auto flex flex-col gap-1 mb-8 opacity-80">
+      <div class="w-full h-1 bg-[#FFF2A9] rounded-full"></div>
+      <div class="w-full h-2 bg-[#FFF2A9] rounded-full"></div>
     </div>
-    <div class="text-zinc-400 text-xs mt-1">
-      &copy; 2026
+
+    <div class="font-display italic text-2xl text-[#94002D] font-extrabold tracking-tight flex items-center justify-center gap-2">
+      <span class="text-[#FFA700] text-sm">✦</span>
+      Alkemist's Portfolio
+      <span class="text-[#FFA700] text-sm">✦</span>
+    </div>
+    
+    <div class="text-zinc-500 text-xs font-semibold mt-2">
+      Crafted with vibe coding &bull; &copy; 2026
     </div>
   </footer>
 
